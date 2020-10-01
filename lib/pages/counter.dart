@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calculatrwidsidenavbar/pages/appbar.dart';
 import 'package:flutter_calculatrwidsidenavbar/pages/sidebar.dart';
 
 class Counter extends StatefulWidget {
@@ -13,17 +14,11 @@ class _CounterState extends State<Counter> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          flexibleSpace: Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                      colors: [Color(0xffFBD3E9),Color(0xffBB377D)]))
-          ),
-          title:
-          Center(child: Text("CALCULATOR")),
-        ),
+        appBar: PreferredSize(
+            preferredSize: Size.fromHeight(60),
+            child: SafeArea(
+                child: AppBarr()),
+            ),
         drawer: Drawerr(),
         body: Container(
           padding: EdgeInsets.all(40),
